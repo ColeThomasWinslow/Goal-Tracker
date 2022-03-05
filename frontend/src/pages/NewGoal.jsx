@@ -9,7 +9,7 @@ function NewGoal() {
     if (!user) {
       navigate("/login");
     }
-  }, [navigate]);
+  }, [navigate, user]);
 
   return (
     <div>
