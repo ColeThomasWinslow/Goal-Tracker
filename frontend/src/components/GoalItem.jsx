@@ -5,11 +5,23 @@ function GoalItem({ goal }) {
   const dispatch = useDispatch();
   return (
     <div className="goal">
-      <div>{new Date(goal.createdAt).toLocaleString("en-US")}</div>
-      <h2>{goal.text}</h2>
-      <button onClick={() => dispatch(deleteGoal(goal._id))} className="close">
-        X
-      </button>
+      <div className="goalHeader">
+        {goal.priority === "1" && <div className="priority">🔴</div>}
+        {goal.priority === "2" && <div className="priority">🟢</div>}
+        {goal.priority === "3" && <div className="priority">🟡</div>}
+        <div className="DateBox">
+          <p className="Date">
+            {new Date(goal.createdAt).toLocaleDateString("en-US")}
+          </p>
+        </div>
+        <button
+          className="close"
+          onClick={() => dispatch(deleteGoal(goal._id))}
+        >
+          X
+        </button>
+      </div>
+      <p>{goal.text}</p>
     </div>
   );
 }

@@ -39,7 +39,7 @@ h3 {
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 0px;
   text-align: center;
 }
 
@@ -49,7 +49,7 @@ h3 {
   align-items: center;
   padding: 20px 0;
   border-bottom: 1px solid #e6e6e6;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 }
 
 .header ul {
@@ -78,7 +78,7 @@ h3 {
 .heading {
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   padding: 0 20px;
 }
 
@@ -93,19 +93,25 @@ h3 {
 }
 
 .goal {
+  box-shadow: 2px 0px 8px grey;
+  border-radius: 10px;
   background-color: #f4f4f4;
-  margin: 10px 0;
-  padding: 20px 0 10px;
+  margin: 10px;
+  padding: 0px 0 15px;
   position: relative;
 }
 
 .goal .close {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 2px;
+  padding: 5px;
+  background-image: linear-gradient(45deg, #882a2a, rgb(255, 82, 82));
+  color: white;
   border: none;
-  background: none;
 }
 
 .form,
@@ -134,7 +140,13 @@ h3 {
   display: block;
   margin: 0 0 5px 3px;
 }
-
+.form-section {
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
 .btn {
   padding: 10px 20px;
   border: 1px solid #000;
@@ -190,7 +202,28 @@ h3 {
   border-radius: 50%;
   animation: spin 1.2s linear infinite;
 }
-
+.priority {
+  margin-right: 3px;
+}
+.DateBox {
+  margin-top: 0px;
+  width: 50%;
+}
+.Date {
+  margin: 0px;
+}
+.goalHeader {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  padding: 10px 0px 10px 0px;
+  background: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+  justify-content: space-evenly;
+}
 @keyframes spin {
   0% {
     transform: rotate(0deg);

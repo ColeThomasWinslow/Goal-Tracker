@@ -32,10 +32,9 @@ function Dashboard() {
   return (
     <>
       <section className="heading">
-        <h1>Welcome back {user && user.name}</h1>
-        <p>Goal Dashboard</p>
+        <h4> {user && user.name} Goals</h4>
       </section>
-      <GoalForm />
+
       <section className="content">
         {goals.length > 0 ? (
           <div className="goals">
