@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { HiOutlineDocumentReport } from "react-icons/hi";
 import { useSelector, useDispatch } from "react-redux";
 import Spinner from "../components/Spinner";
 import GoalItem from "../components/GoalItem";
@@ -31,7 +32,10 @@ function Dashboard() {
   return (
     <>
       <section className="heading">
-        <h4> {user && user.name} Goals</h4>
+        <div className="Head">
+          <h4> {user && user.name} Goals</h4>
+          <HiOutlineDocumentReport style={{ width: "80px", height: "50px" }} />
+        </div>
       </section>
 
       <section className="content">

@@ -45,13 +45,13 @@ function Login() {
     return <Spinner />;
   }
   return (
-    <>
+    <div className="authPages">
       <section className="heading">
         <h1>
           <FaSignInAlt /> Login
-        </h1>
+        </h1>{" "}
         <p> Please Sign in to your account</p>
-      </section>
+      </section>{" "}
       <section>
         <form onSubmit={onSubmit}>
           <div className="form-group">
@@ -67,7 +67,7 @@ function Login() {
           </div>
           <div className="form-group">
             <input
-              type="text"
+              type="password"
               className="form-control"
               id="password"
               name="password"
@@ -82,7 +82,7 @@ function Login() {
           </div>
         </form>
       </section>
-    </>
+    </div>
   );
 }
 

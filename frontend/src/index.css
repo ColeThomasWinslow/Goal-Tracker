@@ -7,85 +7,59 @@
 }
 
 body {
+  margin: 0px;
+  background: #e6e6e6;
   font-family: "Poppins", sans-serif;
   height: 100vh;
 }
 
 a {
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  color: #000;
+  color: white;
 }
-
-p {
-  line-height: 1.7;
+a svg {
+  margin-left: 10px;
 }
-
-ul {
-  list-style: none;
+a:hover {
+  opacity: 80%;
 }
-
-li {
-  line-height: 2.2;
+.LinkBox {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
-
-h1,
-h2,
-h3 {
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.container {
-  width: 100%;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 0px;
-  text-align: center;
-}
-
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
-  border-bottom: 1px solid #e6e6e6;
-  margin-bottom: 20px;
+  width: 100%;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: black;
+  border-bottom: 2px solid #ffffff;
+  box-shadow: 2px 0px 10px;
+  justify-content: space-evenly;
 }
-
-.header ul {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.header ul li {
-  margin-left: 20px;
-}
-
-.header ul li a {
-  display: flex;
-  align-items: center;
-}
-
-.header ul li a:hover {
-  color: #777;
-}
-
-.header ul li a svg {
-  margin-right: 5px;
-}
-
 .heading {
+  margin-top: 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 20px;
-  padding: 0 20px;
+  margin-bottom: 30px;
 }
-
-.heading p {
-  color: #828282;
+.Head {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
-
 .goals {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -93,30 +67,84 @@ h3 {
 }
 
 .goal {
-  box-shadow: 2px 0px 8px grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid white;
+  overflow: hidden;
+  color: black;
+  width: 80vw;
+  max-width: 320px;
+
   border-radius: 10px;
-  background-color: #f4f4f4;
+  background-color: white;
   margin: 10px;
-  padding: 0px 0 15px;
+  padding: 0px 0 35px;
   position: relative;
 }
-
-.goal .close {
+.goalPrev {
+  margin-top: 50px;
+  width: 70%;
+  max-width: 500px;
+}
+.close {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  font-size: 10px;
+  height: 20px;
   border-radius: 2px;
   padding: 5px;
   background-image: linear-gradient(45deg, #882a2a, rgb(255, 82, 82));
   color: white;
   border: none;
+  border: 1px solid white;
 }
+.logo {
+  display: flex;
+  align-items: center;
 
+  max-width: 300px;
+  font-size: 28px;
+  color: rgb(255, 255, 255);
+}
+.logo svg {
+  height: 35px;
+  width: 30px;
+  margin-bottom: 6px;
+  margin-right: 10px;
+}
+.prev {
+  letter-spacing: 1px;
+  width: 50px;
+  height: 25px;
+  font-size: 12px;
+}
+.close:hover {
+  opacity: 60%;
+}
+.form {
+  width: 100%;
+}
+.Form {
+  border-top: 2px solid grey;
+  border-bottom: 2px solid grey;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 600px;
+}
 .form,
 .content {
-  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -129,7 +157,7 @@ h3 {
 .form-group select {
   width: 100%;
   padding: 10px;
-  border: 1px solid #e6e6e6;
+  border: 3px solid black;
   border-radius: 5px;
   margin-bottom: 10px;
   font-family: inherit;
@@ -143,16 +171,37 @@ h3 {
 .form-section {
   display: flex;
   width: 100%;
-  align-items: flex-end;
   flex-wrap: wrap;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
   justify-content: space-evenly;
 }
+.prioritySelect select {
+  border: 3px solid black;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+option {
+  text-align: center;
+}
+.authPages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.authPages input {
+  width: 90vw;
+  max-width: 400px;
+}
 .btn {
+  margin-top: 10px;
   padding: 10px 20px;
-  border: 1px solid #000;
+  border: none;
+  border: 3px solid black;
   border-radius: 5px;
-  background: #000;
-  color: #fff;
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
@@ -174,7 +223,6 @@ h3 {
 
 .btn-block {
   width: 100%;
-  margin-bottom: 20px;
 }
 
 .btn:hover {
@@ -202,19 +250,24 @@ h3 {
   border-radius: 50%;
   animation: spin 1.2s linear infinite;
 }
+.GoalGroup {
+  width: 70%;
+}
+.GoalGroup input {
+  padding: 15px;
+  width: 90%;
+  border: 3px solid black;
+}
 .priority {
   margin-right: 3px;
 }
 .DateBox {
   margin-top: 0px;
-  width: 50%;
 }
 .Date {
   margin: 0px;
 }
 .goalHeader {
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
   padding: 10px 0px 10px 0px;
   background: black;
   color: white;
@@ -244,5 +297,21 @@ h3 {
 
   .heading p {
     font-size: 1.5rem;
+  }
+  .goals {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .LinkBox {
+    margin-top: 20px;
+    margin-bottom: 12px;
+    width: 100%;
+  }
+  .LinkBox p {
+    display: none;
+  }
+  .LinkBox svg {
+    height: 40px;
+    width: 50px;
   }
 }

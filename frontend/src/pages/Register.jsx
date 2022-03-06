@@ -53,7 +53,7 @@ function Register() {
     return <Spinner />;
   }
   return (
-    <>
+    <div className="authPages">
       <section className="heading">
         <h1>
           <FaUser /> Register
@@ -69,7 +69,7 @@ function Register() {
               id="name"
               name="name"
               value={name}
-              placeholder="Enter your Name"
+              placeholder="Enter your Name Here"
               onChange={onChange}
             />
           </div>
@@ -86,7 +86,7 @@ function Register() {
           </div>
           <div className="form-group">
             <input
-              type="text"
+              type="password"
               className="form-control"
               id="password"
               name="password"
@@ -97,7 +97,7 @@ function Register() {
           </div>
           <div className="form-group">
             <input
-              type="text"
+              type="password"
               className="form-control"
               id="password2"
               name="password2"
@@ -111,7 +111,7 @@ function Register() {
           </div>
         </form>
       </section>
-    </>
+    </div>
   );
 }
 

@@ -11,15 +11,13 @@ function App() {
   return (
     <>
       <Router>
-        <div className="container">
-          <Header />
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/Login" element={<Login />} />
-            <Route path="/Register" element={<Register />} />
-            <Route path="/New" element={<NewGoal />} />
-          </Routes>
-        </div>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/Register" element={<Register />} />
+          <Route path="/New" element={<NewGoal />} />
+        </Routes>
       </Router>
       <ToastContainer />
     </>
