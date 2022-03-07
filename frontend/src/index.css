@@ -12,7 +12,10 @@ body {
   font-family: "Poppins", sans-serif;
   height: 100vh;
 }
-
+* input,
+select {
+  font-size: 14px;
+}
 a {
   display: flex;
   align-items: center;

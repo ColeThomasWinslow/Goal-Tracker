@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { deleteGoal } from "../features/goals/goalSlice";
+import { DayCalc } from "../utils/DayCalc";
 function GoalItem({ goal }) {
   const dispatch = useDispatch();
   return (
@@ -22,6 +23,16 @@ function GoalItem({ goal }) {
         </button>
       </div>
       <p>{goal.text}</p>
+      <div>
+        <p>{goal.endDate && "End Date: " + goal.endDate}</p>
+        <p>
+          {goal.endDate &&
+            DayCalc(
+              new Date(new Date(goal.createdAt).toLocaleDateString("en-US")),
+              new Date(new Date(goal.endDate).toLocaleDateString("en-US"))
+            ) + " Days Left"}
+        </p>
+      </div>
     </div>
   );
 }

@@ -23,6 +23,7 @@ const setGoal = asyncHandler(async (req, res) => {
     text: req.body.text,
     user: req.user.id,
     priority: req.body.priority,
+    endDate: req.body.endDate,
   });
   res.status(200).json(goal);
 });

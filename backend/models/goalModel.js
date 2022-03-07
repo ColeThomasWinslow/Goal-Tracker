@@ -13,6 +13,9 @@ const goalSchema = mongoose.Schema(
     priority: {
       type: String,
     },
+    endDate: {
+      type: String,
+    },
   },
   {
     timestamps: true,
