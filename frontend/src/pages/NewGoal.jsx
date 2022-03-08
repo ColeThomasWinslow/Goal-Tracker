@@ -12,7 +12,7 @@ function NewGoal() {
   }, [navigate, user]);
 
   return (
-    <div>
+    <div className="Content">
       <GoalForm />
     </div>
   );

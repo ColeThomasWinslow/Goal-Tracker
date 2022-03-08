@@ -46,18 +46,16 @@ function Login() {
   }
   return (
     <div className="authPages">
-      <section className="heading">
-        <h1>
-          <FaSignInAlt /> Login
-        </h1>{" "}
-        <p> Please Sign in to your account</p>
-      </section>{" "}
+      <h1 className="Title">
+        <FaSignInAlt /> Login
+      </h1>
+      <p> Please Sign in to your account</p>
       <section>
         <form onSubmit={onSubmit}>
           <div className="form-group">
             <input
               type="text"
-              className="form-control"
+              className="AuthInput"
               id="email"
               name="email"
               value={email}
@@ -68,7 +66,7 @@ function Login() {
           <div className="form-group">
             <input
               type="password"
-              className="form-control"
+              className="AuthInput"
               id="password"
               name="password"
               value={password}
@@ -78,7 +76,7 @@ function Login() {
           </div>
 
           <div className="form-group">
-            <button className="btn btn-block"> Sign in</button>
+            <button className="SubmitBtn"> Sign in</button>
           </div>
         </form>
       </section>

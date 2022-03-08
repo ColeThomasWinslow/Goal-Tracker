@@ -32,48 +32,47 @@ function Dashboard() {
     return <Spinner />;
   }
   return (
-    <>
-      <section className="heading">
-        <div className="Head">
-          <h4> {user && user.name} Goals</h4>
-          <HiOutlineDocumentReport style={{ width: "80px", height: "50px" }} />
-        </div>
-      </section>
-      <section className="content">
-        <div className="form-group prioritySelect">
-          <label htmlFor="text">Priority</label>
-          <select
-            className="prioritySelect"
-            name="priority"
-            id="priority"
-            onChange={(e) => setFilter(e.target.value)}
-          >
-            <option defaultValue={"All"} value="All">
-              All Goals
-            </option>
-            <option defaultValue={"1"} value="1">
-              🔴 High Priority
-            </option>
-            <option value="2">🟢 Medium Priority</option>
-            <option value="3">🟡 Low Priority </option>
-          </select>
-        </div>
-      </section>
-      <section className="content">
-        {goals.length > 0 ? (
-          <div className="goals">
-            {Filter &&
-              goals
-                .filter((item) => item.priority === Filter)
-                .map((goal) => <GoalItem key={goal._id} goal={goal} />)}
-            {Filter === "All" &&
-              goals.map((goal) => <GoalItem key={goal._id} goal={goal} />)}
+    <div className="Content">
+      <div>
+        <section className="heading">
+          <h4 className="Title">
+            {user && user.name} Goals <HiOutlineDocumentReport />
+          </h4>
+          <div className="FilterSelect ">
+            <label htmlFor="text">Priority: </label>
+            <select
+              className="prioritySelect"
+              name="priority"
+              id="priority"
+              onChange={(e) => setFilter(e.target.value)}
+            >
+              <option defaultValue={"All"} value="All">
+                ⚪️ All Goals
+              </option>
+              <option defaultValue={"1"} value="1">
+                🔴 High Priority
+              </option>
+              <option value="2">🟢 Medium Priority</option>
+              <option value="3">🟡 Low Priority </option>
+            </select>
           </div>
-        ) : (
-          <h4>You Dont Have any goals Saved</h4>
-        )}
-      </section>
-    </>
+        </section>
+        <div className="Container">
+          {goals.length > 0 ? (
+            <div className="GoalCont">
+              {Filter &&
+                goals
+                  .filter((item) => item.priority === Filter)
+                  .map((goal) => <GoalItem key={goal._id} goal={goal} />)}
+              {Filter === "All" &&
+                goals.map((goal) => <GoalItem key={goal._id} goal={goal} />)}
+            </div>
+          ) : (
+            <h4>You Dont Have any goals Saved</h4>
+          )}
+        </div>
+      </div>
+    </div>
   );
 }
 

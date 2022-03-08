@@ -3,11 +3,11 @@ import { useDispatch } from "react-redux";
 import { createGoal } from "../features/goals/goalSlice";
 import { HiOutlineDocumentAdd } from "react-icons/hi";
 import { AiFillPlusCircle } from "react-icons/ai";
-import { DayCalc } from "../utils/DayCalc";
+
 function GoalForm() {
   const [text, setText] = useState("");
   const [priority, setPriority] = useState("1");
-  const [useDate, setUseDate] = useState(true);
+  const [useDate, setUseDate] = useState(false);
   const [EndDate, setEndDate] = useState("");
   const [Success, setSuccess] = useState(false);
   const dispatch = useDispatch();
@@ -28,24 +28,18 @@ function GoalForm() {
       setSuccess(false);
     }, 3000);
   };
-  const clearData = () => {
-    setText("");
-    setPriority("1");
-    setSuccess(false);
-  };
 
   return (
     <section className="form">
       <div className="heading">
-        <div className="Head">
-          <h4>Create A New Goal</h4>
-          <HiOutlineDocumentAdd style={{ width: "80px", height: "50px" }} />
-        </div>
+        <h4 className="Title">
+          Create A New Goal <HiOutlineDocumentAdd />
+        </h4>
       </div>
-      <form onSubmit={onSubmit} className="Form">
-        <div className="form-section">
-          <div className="form-group GoalGroup">
-            <label htmlFor="text">Goal</label>
+      <div className="FormCont">
+        <form onSubmit={onSubmit} className="NewGoalForm">
+          <div className="FormInfo">
+            <label htmlFor="text">Goal :</label>
             <input
               name="text"
               id="text"
@@ -53,10 +47,9 @@ function GoalForm() {
               onChange={(e) => setText(e.target.value)}
             />
           </div>
-          <div className="form-group prioritySelect">
-            <label htmlFor="text">Priority</label>
+          <div className="FormInfo">
+            <label htmlFor="text">Priority :</label>
             <select
-              className="prioritySelect"
               name="priority"
               id="priority"
               onChange={(e) => setPriority(e.target.value)}
@@ -68,11 +61,13 @@ function GoalForm() {
               <option value="3">🟡 Low Priority </option>
             </select>
           </div>
-        </div>
-        <div className="form-section">
+          <div className="DisableInfo">
+            <label htmlFor="text">Enable End Date </label>{" "}
+            <input type="checkbox" onChange={(e) => setUseDate(!useDate)} />
+          </div>
           {useDate && (
-            <div className="form-group">
-              <label htmlFor="text">Expected Accomplished Date</label>
+            <div className="FormInfo">
+              <label htmlFor="text">End Goal By :</label>
               <input
                 name="date"
                 id="date"
@@ -81,49 +76,17 @@ function GoalForm() {
               />
             </div>
           )}
-          <label htmlFor="text">Disable End Date</label>
-          <input type="checkbox" onChange={(e) => setUseDate(!useDate)} />
-        </div>
-        <button type="submit" className="btn btn-block ">
-          <AiFillPlusCircle /> Add Goal
-        </button>
-      </form>
 
-      <div className="goal goalPrev">
-        <div className="goalHeader">
-          {priority === "1" && <div className="priority">🔴</div>}
-          {priority === "2" && <div className="priority">🟢</div>}
-          {priority === "3" && <div className="priority">🟡</div>}
-          <div className="DateBox">
-            <p className="Date">{new Date().toLocaleDateString("en-US")}</p>
+          <div className="BtnBox">
+            <button type="submit" className=" btn bigBtn">
+              <AiFillPlusCircle /> Add Goal
+            </button>
           </div>
-          <button className="close prev" onClick={clearData}>
-            reset
-          </button>
-        </div>
-        <p>{text}</p>
-        {useDate && (
-          <div>
-            {EndDate === "" ? (
-              <p>Choose a End Date</p>
-            ) : (
-              <div>
-                <p>
-                  {"End Date: " + new Date(EndDate).toLocaleDateString("en-US")}
-                </p>
-                <p>
-                  {DayCalc(
-                    new Date(new Date().toLocaleDateString("en-US")),
-                    new Date(new Date(EndDate).toLocaleDateString("en-US"))
-                  ) + " Days Left"}
-                </p>
-              </div>
-            )}
-          </div>
-        )}
+        </form>
       </div>
-
-      {Success && <p>Your Goal Was Saved</p>}
+      <div className="Container Success">
+        {Success && <p>Your Goal Was Saved</p>}
+      </div>
     </section>
   );
 }

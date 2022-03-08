@@ -54,18 +54,16 @@ function Register() {
   }
   return (
     <div className="authPages">
-      <section className="heading">
-        <h1>
-          <FaUser /> Register
-        </h1>
-        <p> Please create an account</p>
-      </section>
+      <h1 className="Title">
+        <FaUser /> Register
+      </h1>
+      <p> please create an account</p>
       <section>
         <form onSubmit={onSubmit}>
           <div className="form-group">
             <input
               type="text"
-              className="form-control"
+              className="AuthInput"
               id="name"
               name="name"
               value={name}
@@ -76,7 +74,7 @@ function Register() {
           <div className="form-group">
             <input
               type="text"
-              className="form-control"
+              className="AuthInput"
               id="email"
               name="email"
               value={email}
@@ -87,7 +85,7 @@ function Register() {
           <div className="form-group">
             <input
               type="password"
-              className="form-control"
+              className="AuthInput"
               id="password"
               name="password"
               value={password}
@@ -98,7 +96,7 @@ function Register() {
           <div className="form-group">
             <input
               type="password"
-              className="form-control"
+              className="AuthInput"
               id="password2"
               name="password2"
               value={password2}
@@ -107,7 +105,7 @@ function Register() {
             />
           </div>
           <div className="form-group">
-            <button className="btn btn-block"> Create Account</button>
+            <button className="SubmitBtn"> Create Account</button>
           </div>
         </form>
       </section>

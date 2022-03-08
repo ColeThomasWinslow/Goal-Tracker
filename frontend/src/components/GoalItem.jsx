@@ -16,23 +16,27 @@ function GoalItem({ goal }) {
           </p>
         </div>
         <button
-          className="close"
+          className="close btn"
           onClick={() => dispatch(deleteGoal(goal._id))}
         >
           X
         </button>
       </div>
-      <p>{goal.text}</p>
-      <div>
-        <p>{goal.endDate && "End Date: " + goal.endDate}</p>
-        <p>
-          {goal.endDate &&
-            DayCalc(
-              new Date(new Date(goal.createdAt).toLocaleDateString("en-US")),
-              new Date(new Date(goal.endDate).toLocaleDateString("en-US"))
-            ) + " Days Left"}
-        </p>
-      </div>
+      <p className="goalText">{goal.text}</p>
+      {goal.endDate && (
+        <div className="Dates">
+          <p className="EndDate">
+            {goal.endDate && "End Date: " + goal.endDate}
+          </p>
+          <p className="DaysLeft">
+            {goal.endDate &&
+              DayCalc(
+                new Date(new Date(goal.createdAt).toLocaleDateString("en-US")),
+                new Date(new Date(goal.endDate).toLocaleDateString("en-US"))
+              ) + " Days Left For this Goal"}
+          </p>
+        </div>
+      )}
     </div>
   );
 }

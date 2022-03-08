@@ -20,32 +20,31 @@ function Header() {
       <div className="logo">
         <GiArrowScope /> Goal Setter
       </div>
-
-      {user ? (
-        <>
-          <div className="LinkBox">
-            <Link to="/New">
+      <div className="NavBox">
+        {user ? (
+          <>
+            <Link className="NavLink" to="/New">
               <p> Set New Goal</p> <HiOutlineDocumentAdd />
             </Link>
-            <Link to="/">
+            <Link className="NavLink" to="/">
               <p> Your Goals </p> <HiOutlineDocumentReport />
             </Link>
-          </div>
-          <button onClick={onLogout} className="btn">
-            <FaSignOutAlt /> logout
-          </button>{" "}
-        </>
-      ) : (
-        <>
-          <Link to="/login">
-            <FaSignInAlt /> login
-          </Link>
+            <button onClick={onLogout} className="btn LogoutBtn">
+              <FaSignOutAlt /> logout
+            </button>
+          </>
+        ) : (
+          <>
+            <Link className="NavLink" to="/login">
+              <FaSignInAlt /> login
+            </Link>
 
-          <Link to="/register">
-            <FaUser /> Register
-          </Link>
-        </>
-      )}
+            <Link className="NavLink" to="/register">
+              <FaUser /> Register
+            </Link>
+          </>
+        )}
+      </div>
     </header>
   );
 }
