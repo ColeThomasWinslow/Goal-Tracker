@@ -2,7 +2,7 @@
 
 ### [Live Website](https://goalsettercw.herokuapp.com/)
 
-## Project Overview:
+### Project Overview:
 
 ### Full Stack C.R.U.D App to have users create and manage their goals
 
