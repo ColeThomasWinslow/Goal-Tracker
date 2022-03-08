@@ -33,6 +33,12 @@ function Login() {
     }));
   };
 
+  const UseDemo = () => {
+    setFormData({
+      email: "demo@demo.com",
+      password: "demo",
+    });
+  };
   const onSubmit = (e) => {
     e.preventDefault();
     const userData = {
@@ -79,6 +85,12 @@ function Login() {
             <button className="SubmitBtn"> Sign in</button>
           </div>
         </form>
+        <div className="DemoBox">
+          <button onClick={UseDemo} className="btn">
+            {" "}
+            Use Demo Account
+          </button>
+        </div>
       </section>
     </div>
   );
